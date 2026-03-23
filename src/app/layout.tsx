@@ -15,11 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Yalla Baggage - Dubai's Premier Luggage Concierge",
   description: "Seamless luggage pickup, storage, and delivery in the UAE. Explore Dubai hands-free from just 29 AED/day.",
-  icons: {
-    icon: "/Logo.png",
-    shortcut: "/Logo.png",
-    apple: "/Logo.png",
-  },
   openGraph: {
     title: "Yalla Baggage | Hands-Free Travel in Dubai",
     description: "Your bags handled safely, starting from just AED 29/day. We pick up, store, and deliver your luggage anywhere in the UAE.",

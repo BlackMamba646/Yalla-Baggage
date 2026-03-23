@@ -57,7 +57,7 @@ export const WebGLHero = () => {
 
         {/* Brand Logo - Top Left */}
         <div className="absolute top-6 left-6 md:top-8 md:left-10 lg:top-10 lg:left-16 z-50 flex items-center gap-3 pointer-events-auto cursor-pointer">
-          <img src="/Logo.png" alt="Yalla Baggage Logo" className="h-8 md:h-10 lg:h-12 w-auto object-contain" />
+          <img src="/logo.png" alt="Yalla Baggage Logo" className="h-8 md:h-10 lg:h-12 w-auto object-contain" />
           <span className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter drop-shadow-lg">
             <span className="text-white">Yalla</span><span className="text-orange-500">Baggage</span>
           </span>
