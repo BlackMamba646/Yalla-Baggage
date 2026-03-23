@@ -52,7 +52,7 @@ export function FeatureSteps({
         />
 
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-          <div className="order-2 md:order-1 space-y-10">
+          <div className="w-full order-2 md:order-1 space-y-10">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -94,7 +94,7 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              "order-1 md:order-2 relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] overflow-hidden rounded-2xl shadow-2xl border border-gray-100"
+              "w-full order-1 md:order-2 relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] overflow-hidden rounded-2xl shadow-2xl border border-gray-100"
             )}
           >
             <AnimatePresence mode="wait">
