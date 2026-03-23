@@ -44,7 +44,7 @@ export const WebGLHero = () => {
       {/* Top Navbar completely removed per user request */}
 
       {/* Main Hero Container */}
-      <section className="relative w-full h-[100vh] min-h-[700px] overflow-hidden bg-black flex items-center">
+      <section className="relative w-full min-h-[100vh] md:h-[100vh] overflow-hidden bg-black flex items-center flex-col md:flex-row justify-center pb-20 md:pb-0">
         {/* Background Image */}
         <img
           src="/hero-bg.jpg"
@@ -64,41 +64,40 @@ export const WebGLHero = () => {
         </div>
 
         {/* Top Centered Animated Headline */}
-        <div className="absolute top-12 md:top-16 inset-x-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
+        <div className="absolute top-20 md:top-16 inset-x-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl tracking-tight leading-[1.1]">
             YALLA.
           </h1>
           <TypingAnimation
             text="WE'LL HANDLE IT."
             duration={120}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 drop-shadow-2xl mt-1 tracking-tight leading-[1.1] text-center"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 drop-shadow-2xl mt-1 tracking-tight leading-[1.1] text-center"
           />
         </div>
 
         {/* Content Layout */}
-        <div className="relative z-20 w-full h-full max-w-[1920px] mx-auto px-6 lg:px-16 flex flex-col md:flex-row items-center justify-between pt-40 md:pt-32">
+        <div className="relative z-20 w-full h-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-center justify-between pt-48 md:pt-32">
 
           {/* Left Text Block */}
-          <div className="text-white w-full lg:w-[45%] max-w-2xl flex-shrink-0 animate-in fade-in slide-in-from-left-8 duration-1000 mb-12 md:mb-0">
-            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-1 text-orange-400 drop-shadow-md">
+          <div className="text-white w-full lg:w-[45%] max-w-2xl flex-shrink-0 animate-in fade-in slide-in-from-left-8 duration-1000 mb-8 md:mb-0 mt-8 md:mt-0 text-center md:text-left flex flex-col items-center md:items-start">
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-1 text-orange-400 drop-shadow-md text-balance">
               Dubai's Premier Luggage Concierge
             </h3>
-            <h4 className="text-base md:text-lg lg:text-xl font-bold mb-4 text-white drop-shadow-md">
+            <h4 className="text-base md:text-lg lg:text-xl font-bold mb-4 text-white drop-shadow-md text-balance">
               Seamless transport to and from the airport — Stress-free!
             </h4>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-[1.1] drop-shadow-2xl">
-              Luggage Storage,<br />
-              Pickup & Delivery
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-[1.1] drop-shadow-2xl text-balance">
+              Luggage Storage,<br className="hidden sm:block" /> Pickup & Delivery
             </h1>
 
-            <p className="text-lg md:text-xl font-bold text-gray-100 drop-shadow-md mt-6">
+            <p className="text-lg md:text-xl font-bold text-gray-100 drop-shadow-md mt-2 md:mt-6 text-balance">
               Your bags handled safely, starting from just AED 29/day
             </p>
           </div>
 
           {/* Right Form Component */}
-          <div className="w-full lg:w-[55%] xl:max-w-4xl mt-4 md:mt-0 animate-in fade-in slide-in-from-right-8 duration-1000 md:ml-8">
+          <div className="w-full lg:w-[55%] xl:max-w-4xl mt-4 md:mt-0 animate-in fade-in slide-in-from-right-8 duration-1000 md:ml-8 pb-10 md:pb-0">
             <RideBookingForm
               imageUrl="/yalla-form-image.png"
               city="Dubai, UAE"
