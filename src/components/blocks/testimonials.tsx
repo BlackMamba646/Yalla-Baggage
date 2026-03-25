@@ -3,12 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Marquee } from '@/components/ui/3d-testimonails';
 import { BlurIn } from '@/components/ui/blur-in';
 
-// Unique reviews data tailored for Yalla Baggage
+// Unique reviews data tailored for Yallah Baggage
 const testimonials = [
   {
     name: 'Sarah L.',
     username: '@sarahl',
-    body: 'Yalla Baggage completely changed my Dubai layover! Hands-free the entire day.',
+    body: 'Yallah Baggage completely changed my Dubai layover! Hands-free the entire day.',
     img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
     country: '🇬🇧 UK',
   },
@@ -80,7 +80,7 @@ export function TestimonialsSection() {
           className="text-3xl md:text-5xl lg:text-5xl font-black mb-4 text-center text-gray-900 tracking-tight leading-tight"
         />
         <p className="text-lg text-gray-500 font-medium mt-4 max-w-2xl mx-auto">
-          See how Yalla Baggage transforms the travel experience for thousands of visitors coming to the UAE.
+          See how Yallah Baggage transforms the travel experience for thousands of visitors coming to the UAE.
         </p>
       </div>
 

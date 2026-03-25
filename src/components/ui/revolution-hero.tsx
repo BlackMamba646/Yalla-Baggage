@@ -4,16 +4,28 @@ import React from "react"
 import { RideBookingForm } from "@/components/ui/ride-booking-form"
 import { Logos3 } from "@/components/ui/logos3"
 import { TypingAnimation } from "@/components/ui/typing-animation"
+import { HotelLogoCarousel } from "@/components/ui/hotel-logo-carousel"
 import { FeatureSteps } from "@/components/ui/feature-section"
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion"
 import { BlurIn } from "@/components/ui/blur-in"
 import { TestimonialsSection } from "@/components/blocks/testimonials"
+import { Home, Briefcase, PhoneCall, HelpCircle } from 'lucide-react'
+import { NavBar } from "@/components/ui/tubelight-navbar"
+import { TrustStats } from "@/components/ui/trust-stats"
+import Link from "next/link"
+
+const navItems = [
+  { name: 'Home', url: '#home', icon: Home },
+  { name: 'Services', url: '#services', icon: Briefcase },
+  { name: 'FAQ', url: '#faq', icon: HelpCircle },
+  { name: 'Contact', url: '#footer', icon: PhoneCall }
+]
 
 const faqData = [
   {
     id: 1,
     question: "Where can I leave my bags in Dubai?",
-    answer: "With Yalla Baggage, you don't even need to find a location! We pick up your bags directly from any hotel, port, or address in the UAE and handle the storage for you.",
+    answer: "With Yallah Baggage, you don't even need to find a location! We pick up your bags directly from any hotel, port, or address in the UAE and handle the storage for you.",
   },
   {
     id: 2,
@@ -41,10 +53,33 @@ export const WebGLHero = () => {
   return (
     <div className="w-full bg-white flex flex-col font-sans overflow-x-hidden">
 
-      {/* Top Navbar completely removed per user request */}
+      {/* Fixed Global Header */}
+      <header className="fixed top-0 inset-x-0 w-full z-[100] pt-4 px-4 sm:px-8 lg:px-16 pointer-events-none flex justify-between items-start transition-all duration-300">
+        
+        {/* Left Side: Brand Logo */}
+        <div className="flex items-center gap-2 sm:gap-3 pointer-events-auto cursor-pointer bg-black/60 border border-white/10 backdrop-blur-xl px-4 py-2 sm:py-2.5 rounded-full shadow-2xl transition-transform hover:scale-105">
+          <img src="/Logo.png" alt="Yallah Baggage Logo" className="h-6 sm:h-8 md:h-9 lg:h-10 w-auto object-contain" />
+          <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tighter drop-shadow-md">
+            <span className="text-white">Yallah</span><span className="text-orange-500">Baggage</span>
+          </span>
+        </div>
+
+        {/* Right Side: Tubelight Navbar (Desktop) and Book Now Button */}
+        <div className="pointer-events-auto hidden sm:flex items-center gap-4">
+          <NavBar items={navItems} />
+          <Link href="/book-now" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2 rounded-full shadow-lg transition-transform hover:scale-105">
+            Book Now
+          </Link>
+        </div>
+      </header>
+
+      {/* Mobile Bottom Navbar */}
+      <div className="fixed bottom-4 inset-x-0 z-[100] flex justify-center pointer-events-auto sm:hidden w-full px-4">
+        <NavBar items={navItems} className="w-full flex justify-center" />
+      </div>
 
       {/* Main Hero Container */}
-      <section className="relative w-full min-h-[100vh] md:h-[100vh] overflow-hidden bg-black flex items-center flex-col md:flex-row justify-center pb-20 md:pb-0">
+      <section id="home" className="relative scroll-mt-28 w-full min-h-[100vh] md:h-[100vh] overflow-hidden bg-black flex items-center flex-col md:flex-row justify-center pb-20 md:pb-0">
         {/* Background Image */}
         <img
           src="/hero-bg.jpg"
@@ -55,18 +90,10 @@ export const WebGLHero = () => {
         {/* Subtle Dark Gradient Overlay based on mockup (darker on left) */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10 pointer-events-none z-10" />
 
-        {/* Brand Logo - Top Left */}
-        <div className="absolute top-6 left-6 md:top-8 md:left-10 lg:top-10 lg:left-16 z-50 flex items-center gap-3 pointer-events-auto cursor-pointer">
-          <img src="/Logo.png" alt="Yalla Baggage Logo" className="h-8 md:h-10 lg:h-12 w-auto object-contain" />
-          <span className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter drop-shadow-lg">
-            <span className="text-white">Yalla</span><span className="text-orange-500">Baggage</span>
-          </span>
-        </div>
-
         {/* Top Centered Animated Headline */}
         <div className="absolute top-20 md:top-16 inset-x-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl tracking-tight leading-[1.1]">
-            YALLA.
+            YALLAH.
           </h1>
           <TypingAnimation
             text="WE'LL HANDLE IT."
@@ -97,7 +124,7 @@ export const WebGLHero = () => {
           </div>
 
           {/* Right Form Component */}
-          <div className="w-full lg:w-[55%] xl:max-w-4xl mt-4 md:mt-0 animate-in fade-in slide-in-from-right-8 duration-1000 md:ml-8 pb-10 md:pb-0">
+          <div id="contact" className="scroll-mt-28 w-full lg:w-[55%] xl:max-w-4xl mt-4 md:mt-0 animate-in fade-in slide-in-from-right-8 duration-1000 md:ml-8 pb-10 md:pb-0">
             <RideBookingForm
               imageUrl="/yalla-form-image.png"
               city="Dubai, UAE"
@@ -114,33 +141,35 @@ export const WebGLHero = () => {
       </div>
 
       {/* How it Works Section */}
-      <FeatureSteps
-        title="How Yalla Baggage Works"
-        autoPlayInterval={4000}
-        features={[
-          {
-            step: 'Step 1',
-            title: 'Book Your Transfer',
-            content: 'Schedule your luggage pickup online in seconds. Select your preferred pickup and drop-off locations.',
-            image: '/whatsapp_support.png'
-          },
-          {
-            step: 'Step 2',
-            title: 'We Pick It Up',
-            content: 'Our concierge driver securely collects your bags right from your doorstep or hotel lobby.',
-            image: '/yalla-form-image.png'
-          },
-          {
-            step: 'Step 3',
-            title: 'Explore Hands-Free',
-            content: 'Enjoy your day completely baggage-free! We will securely deliver your luggage to the airport or your next destination.',
-            image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=800'
-          },
-        ]}
-      />
+      <div id="services" className="scroll-mt-28">
+        <FeatureSteps
+          title="How Yallah Baggage Works"
+          autoPlayInterval={4000}
+          features={[
+            {
+              step: 'Step 1',
+              title: 'Book Your Transfer',
+              content: 'Schedule your luggage pickup online in seconds. Select your preferred pickup and drop-off locations.',
+              image: '/whatsapp_support.png'
+            },
+            {
+              step: 'Step 2',
+              title: 'We Pick It Up',
+              content: 'Our concierge driver securely collects your bags right from your doorstep or hotel lobby.',
+              image: '/yalla-form-image.png'
+            },
+            {
+              step: 'Step 3',
+              title: 'Explore Hands-Free',
+              content: 'Enjoy your day completely baggage-free! We will securely deliver your luggage to the airport or your next destination.',
+              image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=800'
+            },
+          ]}
+        />
+      </div>
 
       {/* FAQ Section */}
-      <div className="w-full bg-white py-16 md:py-24 border-t border-gray-100">
+      <div id="faq" className="scroll-mt-28 w-full bg-white py-16 md:py-24 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <BlurIn
             word="Frequently Asked Questions"
@@ -154,6 +183,12 @@ export const WebGLHero = () => {
           />
         </div>
       </div>
+
+      {/* Trust Statistics Section */}
+      <TrustStats />
+
+      {/* 5-Star Hotels Logo Carousel */}
+      <HotelLogoCarousel />
 
       {/* Testimonials Section */}
       <TestimonialsSection />

@@ -70,7 +70,7 @@ export const RideBookingForm = React.forwardRef<HTMLDivElement, RideBookingFormP
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 tracking-tight">
-              Ship anywhere with Yalla Baggage
+              Ship anywhere with Yallah Baggage
             </motion.h1>
 
             <form onSubmit={handleSubmit} className="space-y-4">
